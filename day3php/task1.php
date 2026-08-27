@@ -1,0 +1,252 @@
+<?php
+
+
+class Circle{
+
+    // variables
+    private $radius;
+    private $color;
+
+    //constructor 
+    function __construct($radius , $color){
+        $this->radius = $radius;
+        $this->color = $color;
+    }
+
+    // getter & setter for redius 
+    function getRadius(){
+        return $this->radius;
+    }
+    function setRadius($r):void{
+         $this->radius = $r ;
+    }
+
+    // getter & setter for color
+    function getcolor(){
+        return $this->color;
+    }
+    function setcolor($c):void{
+         $this->color = $c ;
+    }
+
+    // to string fun
+    function toString():String{  return "Circle[radius={$this->radius}, color={$this->color}]"; }
+
+    // calc Area 
+    function getArea(){
+       return pi() * $this->radius * $this->radius;
+    }
+}
+$c = new Circle(1.0 , "red");
+echo $c->toString() . "<br>";
+echo "Area = " . $c->getArea();
+
+
+/////////////////////////////
+
+class employee{
+
+    //variables
+    private $id;
+    private $firstname;
+    private $lastname;
+    private $salary;
+
+    // constructor 
+    function __construct ($id ,$firstname,$lastname,$salary ){
+        $this ->id=$id;
+        $this->firstname=$firstname;
+        $this->lastname=$lastname;
+        $this->salary=$salary;
+    }
+
+
+    // getter & setter Id
+    function getId(){
+        return $this->id;
+    }
+    function setId($I):void{
+        $this->id=$I;
+    }
+
+    //getter & setter Fname
+    function getFirstname(){
+        return $this->firstname;
+    }
+    function setFirstname($f):void{
+        $this->firstname=$f;
+    }
+
+    // getter & setter lname
+    function getLastname(){
+        return $this->lastname;
+    }
+    function setLastname($l):void{
+        $this->lastname=$l;
+    }
+
+    // getter & setter Salary
+    function getSalary(){
+        return $this->salary;
+    }
+    function setSalary($s):void{
+        $this->salary=$s;
+    }
+
+    // print the fullname
+    function getName(){
+    return $this->firstname . " " . $this->lastname;
+    }
+
+    // Methods
+    function getAnnualsalary(){
+        return $this->salary * 12;
+    }
+
+    function raiseSalary($percent){
+    $this->salary += ($this->salary * $percent) / 100;
+    return $this->salary;
+    }
+
+    function toString(){
+        return "Employee[id={$this->id},name={$this->firstname} {$this->lastname},salary={$this->salary}]";
+    }
+
+
+}
+$E = new employee(2401791 , "salma" , "sallam" , 2000);
+echo $E->toString() . "<br>";
+echo "Annual salary = " . $E->getAnnualsalary() . "<br>";
+echo "Raise salary = " . $E->raiseSalary(10). "<br>" ;
+
+
+///////////////////////////
+
+class rectangle{
+    // variables
+    private $length;
+    private $width;
+
+    // constructor
+    function __construct($length , $width)
+    {
+        $this->length=$length;
+        $this->width=$width;
+    }
+
+    //getter & setter Width
+    function getwidth()
+    {
+        return $this->width;
+    }
+    function setwidth($w):void{
+        $this->width=$w;
+
+    }
+
+    // getter & satter length
+    function getlenght()
+    {
+        return $this->length;
+    }
+    function setlenght($l):void{
+        $this->length=$l;
+
+    }
+
+    // calc Area
+    function getArea(){
+        return $this->width*$this->length;
+    }
+
+    // calc perimeter 
+    function getperimeter(){
+        return ($this->width + $this->length)*2;
+    }
+
+    // to string function
+    function tostring()
+    {
+        return "Rectangle [Length = {$this->length} , width = {$this->width}]" ;
+    }
+}
+
+// object 
+$R = new rectangle(1.0, 1.0);
+echo $R->tostring() . "<br>";
+echo "Area = ".$R->getArea() . "<br>" ;
+echo "Perimeter = ". $R->getperimeter() . "<br>";
+
+
+////////////////////// 
+
+class InvoiceIthem{
+
+    // variables 
+    private $id ; 
+    private $desc ;
+    private $qty ; 
+    private $unitPrice ;
+
+    // constructor 
+    function __construct($id,$desc,$qty,$unitPrice){
+        $this->id = $id;
+        $this->desc = $desc;
+        $this->qty=$qty;
+        $this->unitPrice=$unitPrice;
+    }
+
+    // getter id 
+    function getId():string{
+        return $this->id;
+    }
+
+    // getter Desc
+    function getDesc():string{
+        return $this->desc;
+    }
+
+    //getter & setter qty
+    function getQty(){
+        return $this->qty ;
+    }
+    function setQty($q):void{
+        $this->qty = $q ;
+    }
+
+    // getter & setter Unit Price 
+    function getUnitPrice(){
+        return $this->unitPrice;
+    }
+    function setUnitPrice($u):void{
+        $this->unitPrice = $u ; 
+    }
+
+    // calc total 
+    function getTotel(){
+        return $this->unitPrice * $this->qty ;
+    }
+
+    // print 
+    function toString():string{
+        return "InvoiceIthem [ID = {$this->id} , Desc = {$this->desc} , Qty = {$this->qty} , Unit Price = {$this->unitPrice}]";
+    }
+}
+
+// object 
+$invoice = new InvoiceIthem(
+    "I001",
+    "Laptop",
+    2,
+    15000
+);
+echo $invoice->toString() . "<br>";
+
+echo "Total = " . $invoice->getTotel();
+
+
+
+
+
+
+?>
